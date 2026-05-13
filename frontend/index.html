@@ -1351,7 +1351,7 @@ if (task.dueDate) {
     li.classList.toggle("task-done");
     task.completed = li.classList.contains("task-done");
 
-await fetch(`fetch("https://full-stack-task-dashboard.onrender.com/tasks")/tasks/${task._id}`, {
+await fetch(`https://full-stack-task-dashboard.onrender.com/tasks/${task._id}`, {
     method: "PUT",
     headers: {
     "Content-Type": "application/json",
@@ -1386,7 +1386,7 @@ await loadTasks();
     let deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
    deleteBtn.onclick = async function () {
-   await fetch(`fetch("https://full-stack-task-dashboard.onrender.com/tasks")/tasks/${task._id}`, {
+   await fetch(`https://full-stack-task-dashboard.onrender.com/tasks/${task._id}`, {
     method: "DELETE",
     headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
