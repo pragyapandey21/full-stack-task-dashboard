@@ -1020,6 +1020,97 @@ button:hover,
     background: #e2e3e5;
     color: #555;
 }
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 8px;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100% !important;
+        min-height: auto !important;
+        flex-direction: column !important;
+        padding: 10px;
+    }
+
+    .sidebar {
+        width: 100% !important;
+        height: auto !important;
+        flex-direction: row !important;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .main {
+        width: 100% !important;
+        min-width: 100% !important;
+        padding: 10px !important;
+    }
+
+    .top-bar,
+    .top-section,
+    .subject-container,
+    .stats-container,
+    .task-input-section,
+    .task-controls,
+    .filter-section {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .subject-card,
+    .task-card,
+    .analytics-box,
+    .completed-box,
+    #taskList li {
+        width: 100% !important;
+    }
+
+    input,
+    select,
+    button,
+    #taskInput,
+    #priorityInput,
+    #subjectInput,
+    #dueDateInput,
+    #searchInput,
+    #sortSelect {
+        width: 100% !important;
+        font-size: 15px;
+    }
+
+    #taskList li {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px;
+    }
+
+    #taskList button,
+    .task-actions button {
+        width: 100% !important;
+    }
+
+    canvas {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    h1, h2, h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
 </style>
 
 </head>
