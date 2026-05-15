@@ -1061,6 +1061,67 @@ button:hover,
     background: #e2e3e5;
     color: #555;
 }
+@media screen and (max-width: 768px){
+
+    .container{
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .sidebar{
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        border-radius: 20px;
+    }
+
+    .main-content{
+        width: 100%;
+    }
+
+    .top-section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile-card{
+        order: -1;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .dashboard-header{
+        width: 100%;
+    }
+
+    .task-box{
+        width: 100%;
+    }
+
+    .task-input-row{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .task-input-row input,
+    .task-input-row select,
+    .task-input-row button{
+        width: 100%;
+    }
+
+    #subjectCards{
+        justify-content: center;
+    }
+
+    .subject-card{
+        width: 130px;
+        height: 150px;
+    }
+
+}
 
 </style>
 
