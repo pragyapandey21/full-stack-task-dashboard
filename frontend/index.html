@@ -1252,6 +1252,18 @@ let category = categoryInput.value;
 
     if (text === "") return;
 
+    let alreadyExists = tasks.some(task => {
+    return (
+        task.text.trim().toLowerCase() === text.trim().toLowerCase() &&
+        task.category.trim().toLowerCase() === category.trim().toLowerCase()
+    );
+});
+
+if (alreadyExists) {
+    showToast("❌ Task already exists");
+    return;
+}
+
     let task = {
     id: Date.now(),
     text: text,
