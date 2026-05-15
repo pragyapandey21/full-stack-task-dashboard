@@ -575,18 +575,37 @@ button {
     transform: scale(1.05);
 }
 
-.subject-card .delete-subject {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border: none;
-    background: #ff5c5c;
-    color: white;
-    border-radius: 50%;
-    width: 26px;
-    height: 26px;
-    cursor: pointer;
+.subject-card{
+    width: 180px;
+    min-height: 180px;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(10px);
+    border-radius: 22px;
+    padding: 20px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
     transition: all 0.3s ease;
+}
+.subject-card img{
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.subject-card h3{
+    margin: 0;
+    font-size: 30px;
+}
+#subjectCards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 .subject-count {
     margin-top: 6px;
