@@ -1252,16 +1252,19 @@ let category = categoryInput.value;
 
     if (text === "") return;
 
-    let alreadyExists = tasks.some(task => {
-    return (
-        task.text.trim().toLowerCase() === text.trim().toLowerCase() &&
-        task.category.trim().toLowerCase() === category.trim().toLowerCase()
-    );
-});
+    let existingCards = document.querySelectorAll(".task-card");
 
-if (alreadyExists) {
-    showToast("❌ Task already exists");
-    return;
+for (let card of existingCards) {
+    let existingText = card.querySelector("h3").innerText.trim().toLowerCase();
+    let existingCategory = card.querySelector(".category").innerText.trim().toLowerCase();
+
+    if (
+        existingText === text.trim().toLowerCase() &&
+        existingCategory === category.trim().toLowerCase()
+    ) {
+        showToast("❌ Task already exists");
+        return;
+    }
 }
 
     let task = {
