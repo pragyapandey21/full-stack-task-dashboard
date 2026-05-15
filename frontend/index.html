@@ -1631,6 +1631,11 @@ function displaySubjects() {
 
 
         let taskCount = getTaskCountBySubject(subject.name);
+        let card = document.createElement("div");
+card.className = "subject-card";
+card.onclick = function () {
+    filterBySubject(subject.name);
+};
 
 card.innerHTML = `
     <button class="delete-subject" onclick="event.stopPropagation(); deleteSubject(${index})">×</button>
