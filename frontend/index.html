@@ -1252,15 +1252,13 @@ let category = categoryInput.value;
 
     if (text === "") return;
 
-    let existingCards = document.querySelectorAll(".task-card");
+    let allTaskNames = document.querySelectorAll(".task-card h3");
+let allTaskCategories = document.querySelectorAll(".task-card .category");
 
-for (let card of existingCards) {
-    let existingText = card.querySelector("h3").innerText.trim().toLowerCase();
-    let existingCategory = card.querySelector(".category").innerText.trim().toLowerCase();
-
+for (let i = 0; i < allTaskNames.length; i++) {
     if (
-        existingText === text.trim().toLowerCase() &&
-        existingCategory === category.trim().toLowerCase()
+        allTaskNames[i].innerText.trim().toLowerCase() === text.trim().toLowerCase() &&
+        allTaskCategories[i].innerText.trim().toLowerCase() === category.trim().toLowerCase()
     ) {
         showToast("❌ Task already exists");
         return;
