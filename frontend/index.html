@@ -1700,6 +1700,8 @@ function filterBySubject(name) {
 }
 function showAllSubjects() {
     selectedSubject = "All";
+     document.getElementById("subjectCards").style.display = "grid";
+
     filterTasks(currentFilter);
     displaySubjects();
 }
