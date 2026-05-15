@@ -1252,17 +1252,22 @@ let category = categoryInput.value;
 
     if (text === "") return;
 
-    let allTaskNames = document.querySelectorAll(".task-card h3");
-let allTaskCategories = document.querySelectorAll(".task-card .category");
-
-for (let i = 0; i < allTaskNames.length; i++) {
-    if (
-        allTaskNames[i].innerText.trim().toLowerCase() === text.trim().toLowerCase() &&
-        allTaskCategories[i].innerText.trim().toLowerCase() === category.trim().toLowerCase()
-    ) {
-        showToast("❌ Task already exists");
-        return;
+let res = await fetch("https://full-stack-task-dashboard.onrender.com/tasks", {
+    headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`
     }
+});
+
+let existingTasks = await res.json();
+
+let alreadyExists = existingTasks.some(task =>
+    task.title.trim().toLowerCase() === text.trim().toLowerCase() &&
+    task.subject.trim().toLowerCase() === category.trim().toLowerCase()
+);
+
+if (alreadyExists) {
+    showToast("❌ Task already exists");
+    return;
 }
 
     let task = {
